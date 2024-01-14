@@ -1,0 +1,18 @@
+.plug {
+    background-color: #1f253d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+}
+
+.title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+}

@@ -1,0 +1,11 @@
+
+.navigation {
+    min-width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.item {
+    font-size: 18px;
+    font-weight: 500;
+}
