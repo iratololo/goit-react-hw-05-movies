@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom"
 import { useEffect,useState } from "react";
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-import Error from "components/Error/Error";
-import Container from "components/Container/Container";
+import Section from "components/reuse/Section/Section";
+import Error from "components/reuse/Error/Error";
+import Container from "components/reuse/Container/Container";
 import LoadMoreBtn from "components/LoadMoreBtn/LoadMoreBtn";
 import Plug from "components/Plug/Plug";
 import css from "./Cast.module.css"
@@ -61,12 +62,12 @@ getData()
      }, [movieId,showCredits,currentPage,load])
 
     return (
-      <>
+      <Section>
         {isEmpty && <Error>There is no results</Error>}
         {error && <Error>{error}</Error>}
-        {!isEmpty && <div className={css.credits}>
+        {!isEmpty && <div>
           <Container>
-             <h4 className={css.title}>Starring</h4>
+             <div className={css.title}>Starring</div>
               <ul className={css.list}>
                 {showCredits.map(({id,profile_path,name,character}) => {
                   return (
@@ -84,7 +85,7 @@ getData()
               {showCredits.length >= perPage && !end && <LoadMoreBtn fn={loadMore} />}
         </Container>
             </div>}
-      </>
+      </Section>
   )
 }
 

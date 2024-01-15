@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from "react";
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { useSearchParams } from "react-router-dom";
 
-import Error from "components/Error/Error";
+import Error from "components/reuse/Error/Error";
 import Searchbar from "components/Searchbar/Searchbar";
 import ProductList from "components/ProductList/ProductList";
-import Container from "components/Container/Container";
+import Container from "components/reuse/Container/Container";
 import LoadMoreBtn from "components/LoadMoreBtn/LoadMoreBtn";
-import Section from "components/Section/Section";
+import Section from "components/reuse/Section/Section";
 
 import getSearchMovies from "api/searchMovies"
 

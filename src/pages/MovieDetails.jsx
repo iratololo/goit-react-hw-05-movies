@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-import Error from "components/Error/Error";
+import Error from "components/reuse/Error/Error";
 import Movie from "components/Movie/Movie";
-import Section from "components/Section/Section";
+import Section from "components/reuse/Section/Section";
 
 import { getDetails } from "api/movie";
 

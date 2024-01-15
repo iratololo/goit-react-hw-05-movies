@@ -1,8 +1,9 @@
 import {NavLink, Outlet, useLocation, useNavigate } from "react-router-dom"
 
-import Container from "components/Container/Container";
+import Container from "components/reuse/Container/Container";
 import css from "./Movie.module.css"
 import GoBackBtn from "components/GoBackBtn/GoBackBtn";
+import Title from "components/reuse/Title/Title";
 
 const Movie = ({ data: { title, poster_path, vote_average, overview, genres, release_date, runtime, backdrop_path } }) => {
     
@@ -21,8 +22,8 @@ const Movie = ({ data: { title, poster_path, vote_average, overview, genres, rel
     const minute = Number.parseInt(runtime - (hour * 60));
     return (
         <>
-            <GoBackBtn handlerGoBack={handlerGoBack} />
-      <div className={css.wrap}>
+        <Container><GoBackBtn handlerGoBack={handlerGoBack} /></Container>
+        <div className={css.wrap}>
         <div className={css.card}>
             <Container>
                 <div className={css.content}>
@@ -30,7 +31,7 @@ const Movie = ({ data: { title, poster_path, vote_average, overview, genres, rel
                         {poster_path && <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} className={css.img}/>}
                     </div>
                     <div>
-                        <h3 className={css.name}>{title}</h3>
+                        <Title className={css.name} level={3} title={title}/>
                         <div className={css.info}>
                             {release_date && <div className={css.item}>{date.getFullYear()}</div>}
                             {genres.length !== 0 && <div className={css.item}><p className={css.genres}>{genres.map(item => <span key={item.id} className={css.genre}>{item.name}</span>)}</p></div>}

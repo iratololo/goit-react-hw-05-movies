@@ -1,5 +1,5 @@
 import Nav from "components/Nav/Nav"
-import Container from "components/Container/Container"
+import Container from "components/reuse/Container/Container"
 
 import css from "./Header.module.css"
 

@@ -5,10 +5,7 @@
     color: #fff;
     font-weight: 500;
     transition: all 250ms linear;
-}
-
-.button:not(:last-child) {
-   margin-bottom: 20px;
+    padding: 15px 0;
 }
 
 .button:hover {

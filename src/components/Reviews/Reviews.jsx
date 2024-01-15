@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom"
 import { useEffect,useState } from "react";
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-import Error from "components/Error/Error";
-import Container from "components/Container/Container";
+import Section from "components/reuse/Section/Section";
+import Error from "components/reuse/Error/Error";
+import Container from "components/reuse/Container/Container";
 import LoadMoreBtn from "components/LoadMoreBtn/LoadMoreBtn";
 import Review from "components/Review/Review";
 import Modal from "components/Modal/Modal";
@@ -73,7 +74,7 @@ const Reviews = () => {
 getData()
      }, [movieId, showReviews, currentPage, load])
   return (
-      <>
+      <Section>
         {isEmpty && <Error>There is no reviews</Error>}
         {error && <Error>{error}</Error>}
         {!isEmpty && <div>
@@ -85,7 +86,7 @@ getData()
           </Container>
         </div>}
         {isModal && <Modal closeModal={closeModal} data={modalData} />}
-    </>
+    </Section>
   )
 }
 

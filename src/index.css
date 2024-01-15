@@ -53,3 +53,8 @@ img {
 .active {
 color: #fcb150;
 }
+
+h2 {
+  font-size: 35px;
+  font-weight: 500;
+}

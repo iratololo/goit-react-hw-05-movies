@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-import Container from "components/Container/Container";
+import Container from "components/reuse/Container/Container";
 import ProductList from "components/ProductList/ProductList";
-import Error  from "components/Error/Error";
-import Section from "components/Section/Section";
+import Error  from "components/reuse/Error/Error";
+import Section from "components/reuse/Section/Section";
+import Title from "components/reuse/Title/Title";
 
 import { getAllTrending } from "api/trending";
 
@@ -35,7 +36,7 @@ getData()
       <Section>
         <Container>
           {error&& <Error>{error}</Error>}
-          {trendList.length !== 0 && <h2>Trending today</h2>}
+          {trendList.length !== 0 && <Title level={2} title="Trending today"/>}
           {trendList.length !== 0 && <ProductList data={trendList} />}
         </Container>
       </Section>
